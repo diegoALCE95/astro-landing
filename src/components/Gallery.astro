@@ -1,0 +1,89 @@
+---
+
+---
+<div class="gallery py-5">
+    <div class="tabs">
+        <div class="tab-group">
+          <button class="tab-btn active" data-tab="1">Tab 1</button>
+          <button class="tab-btn" data-tab="2">Tab 2</button>
+        </div>
+      
+        <div class="tab-content" data-content="1">
+          <p>This is content for Tab 1.</p>
+        </div>
+        <div class="tab-content" data-content="2">
+          <p>This is content for Tab 2.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.gallery {
+    display: flex;
+    justify-content: center;
+}
+
+.tab-group {
+    max-width: 25rem;
+    width: 100%;
+}
+
+.tab-btn {
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px 5px 0 0;
+  display: inline-block;
+  border: none;
+  width: 50%;
+}
+
+.tab-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.tab-btn.active {
+  background-color: #fff;
+  font-weight: bold;
+  border-bottom: 1px solid transparent;
+}
+
+/* Styling for the tab content */
+.tab-content {
+  display: none;
+  padding: 20px;
+  border: 1px solid #f1f1f1;
+  border-radius: 0 5px 5px 5px;
+  background-color: #fff;
+}
+
+.tab-content.active {
+  display: block;
+}
+</style>
+  
+<script>
+// Get all tab buttons and content
+const tabs = document.querySelectorAll('.tab-btn');
+const contents = document.querySelectorAll('.tab-content');
+
+// Function to activate a tab
+function activateTab(tab) {
+  // Remove 'active' class from all buttons and contents
+  tabs.forEach(t => t.classList.remove('active'));
+  contents.forEach(c => c.classList.remove('active'));
+
+  // Add 'active' class to the clicked tab and corresponding content
+  tab.classList.add('active');
+  document.querySelector(`.tab-content[data-content="${tab.dataset.tab}"]`).classList.add('active');
+}
+
+// Add click event to all tab buttons
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => activateTab(tab));
+});
+
+// Activate the first tab by default when the page loads
+activateTab(tabs[0]);
+
+</script>

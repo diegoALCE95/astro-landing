@@ -4,98 +4,120 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
+interface Props {
+    subtitle: string,
+    title: string,
+    desc: string,
+}
+
+const { subtitle, title, desc } = Astro.props;
 ---
-<div class="carousel">
+
+<div class="carousel py-5">
     <div class="container">
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide">
-                <div class="card-wrapper">
-                    <div class="layer">
-                        <h2>Roof Repair</h2>
-                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
-                        <a class="btn">Read more</a>
+        <div class="row titles-wrapper">
+            <p class="row-subtitle text-center">{ subtitle }</p>
+            <h2 class="row-title text-center">{ title }</h2>
+            <p class="row-desc">{ desc }</p>
+        </div>
+
+        <div class="row">
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                    <div class="card-wrapper">
+                        <div class="layer">
+                            <p class="title">Roof Repair</p>
+                            <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                            <a class="btn">Read more</a>
+                        </div>
                     </div>
-                </div>
-              </div>
-              
-              <div class="swiper-slide">
-                <div class="card-wrapper">
-                    <div class="layer">
-                        <h2>Roof Repair</h2>
-                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
-                        <a class="btn">Read more</a>
+                  </div>
+                  
+                  <div class="swiper-slide">
+                    <div class="card-wrapper">
+                        <div class="layer">
+                            <p class="title">Roof Replacement</p>
+                            <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                            <a class="btn">Read more</a>
+                        </div>
                     </div>
-                </div>
-              </div>
-              
-              <div class="swiper-slide">
-                <div class="card-wrapper">
-                    <div class="layer">
-                        <h2>Roof Repair</h2>
-                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
-                        <a class="btn">Read more</a>
+                  </div>
+                  
+                  <div class="swiper-slide">
+                    <div class="card-wrapper">
+                        <div class="layer">
+                            <p class="title">Roof Installation</p>
+                            <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                            <a class="btn">Read more</a>
+                        </div>
                     </div>
-                </div>
-              </div>
-              
-              <div class="swiper-slide">
-                <div class="card-wrapper">
-                    <div class="layer">
-                        <h2>Roof Repair</h2>
-                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
-                        <a class="btn">Read more</a>
+                  </div>
+                  
+                  <div class="swiper-slide">
+                    <div class="card-wrapper">
+                        <div class="layer">
+                            <p class="title">Roof Repair</p>
+                            <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                            <a class="btn">Read more</a>
+                        </div>
                     </div>
-                </div>
-              </div>
-              
-              <div class="swiper-slide">
-                <div class="card-wrapper">
-                    <div class="layer">
-                        <h2>Roof Repair</h2>
-                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
-                        <a class="btn">Read more</a>
+                  </div>
+                  
+                  <div class="swiper-slide">
+                    <div class="card-wrapper">
+                        <div class="layer">
+                            <p class="title">Roof Repair</p>
+                            <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                            <a class="btn">Read more</a>
+                        </div>
                     </div>
-                </div>
-              </div>
-              
-              <div class="swiper-slide">
-                <div class="card-wrapper">
-                    <div class="layer">
-                        <h2>Roof Repair</h2>
-                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
-                        <a class="btn">Read more</a>
+                  </div>
+                  
+                  <div class="swiper-slide">
+                    <div class="card-wrapper">
+                        <div class="layer">
+                            <p class="title">Roof Repair</p>
+                            <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                            <a class="btn">Read more</a>
+                        </div>
                     </div>
+                  </div>
+                  
+                  
+                  ...
                 </div>
-              </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
               
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
               
-              ...
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
             </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-          
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          
-            <!-- If we need scrollbar -->
-            <div class="swiper-scrollbar"></div>
         </div>
     </div>
 </div>
 
 
 <style>
-.carousel {
-    padding: 5rem 0;
+:root {
+    /* Navigation */
+    --swiper-navigation-color: transparent;
+
+    /* Pagination */
+    --swiper-pagination-bullet-size: 15px;
+    --swiper-pagination-bottom: 0;
+    --swiper-pagination-bullet-horizontal-gap: 6px;
 }
 
 .swiper {
     width: 100%;
-    min-height: 403px;
+    min-height: 540px;
     height: auto;
 }
 
@@ -127,7 +149,7 @@ import 'swiper/css/pagination';
     background-color: #1966becc;
 }
 
-.swiper .card-wrapper .layer h2 {
+.swiper .card-wrapper .layer .title {
     color: var(--white);
     font-size: 1.375rem;
     font-weight: 700;
@@ -164,29 +186,32 @@ import { Navigation, Pagination } from 'swiper/modules';
 // init Swiper:
 const swiper = new Swiper('.swiper', {
   // configure Swiper to use modules
-  modules: [Navigation, Pagination],
+  modules: [Pagination],
   slidesPerView: 3,
   spaceBetween: 20,
   direction: 'horizontal',
   loop: true,
   // Optional parameters
   grabCursor: true,
+//   navigation: {
+//     nextEl: '.swiper-button-next',
+//     prevEl: '.swiper-button-prev',
+//   },
+
 
   // If we need pagination
   pagination: {
     el: '.swiper-pagination',
+    clickable: true,
   },
 
   // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+  
 
   // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
+//   scrollbar: {
+//     el: '.swiper-scrollbar',
+//   },
 });
 
 /* Animation */

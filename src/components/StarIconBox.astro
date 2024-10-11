@@ -1,0 +1,36 @@
+---
+import { Image } from 'astro:assets';
+
+const { src, alt, title, desc } = Astro.props;
+---
+
+<div class="star-box">
+    <Image class="icon" src={src} alt={alt} />
+    <p class="title">{ title }</p>
+    <p class="desc">{ desc }</p>
+</div>
+
+<style>
+    .star-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .icon {
+            width: 7.625rem;
+            height: auto;
+        }
+
+        .title {
+            color: var(--blue);
+            font-size: 1.375rem;
+            font-weight: 700;
+            padding: 1.25rem 0 .625rem;
+        }
+
+        .desc {
+            text-align: center;
+        }
+    }
+</style>

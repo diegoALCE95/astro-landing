@@ -3,12 +3,24 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Carousel from '../components/Carousel.astro';
+import WhyWork from '../components/WhyWork.astro';
+import Gallery from '../components/Gallery.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
 		<Header />
 		<Hero />
-		<Carousel />
+		<Carousel
+			subtitle="Our Roofing Services"
+			title="Comprehensive Roofing Services for Every Need"
+			desc="We provide comprehensive roofing solutions to meet all your needs:"
+		/>
+		<WhyWork 
+			subtitle="Why Us"
+			title="Why Work With Us?"
+			desc="When it comes to roofing, you deserve nothing but the best. Here’s why [Roofing Company] is Austin’s trusted choice for homeowners and businesses:"
+		/>
+		<Gallery />
 	</main>
 </Layout>

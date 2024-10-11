@@ -1,0 +1,72 @@
+---
+import StarIconBox from "./StarIconBox.astro";
+import Icon from "../images/star-icon.svg";
+
+interface Props {
+    subtitle: string,
+    title: string,
+    desc: string,
+}
+
+const { subtitle, title, desc } = Astro.props;
+---
+
+<div class="why-work py-5">
+    <div class="container">
+        <div class="row titles-wrapper">
+            <p class="row-subtitle">{ subtitle }</p>
+            <h2 class="row-title text-center">{ title }</h2>
+            <p class="row-desc">{ desc }</p>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <StarIconBox
+                    src={ Icon }
+                    alt="star icon"
+                    title="300+ Projects Completed"
+                    desc="Over 300 successful roofing projects highlight our commitment to quality and reliability in Austin."
+                />
+            </div>
+            <div class="col">
+                <StarIconBox
+                    src={ Icon }
+                    alt="star icon"
+                    title="Fully Insured"
+                    desc="Your property and investment are fully protected with our insured roofing services."
+                />
+            </div>
+            
+            <div class="col">
+                <StarIconBox
+                    src={ Icon }
+                    alt="star icon"
+                    title="Expert Roofers"
+                    desc="With years of experience, we deliver trusted, high-quality service on every project."
+                />
+            </div>
+
+            <div class="col">
+                <StarIconBox
+                    src={ Icon }
+                    alt="star icon"
+                    title="Certified Professionals"
+                    desc="Our certified roofers guarantee top-notch workmanship on every job."
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 0px;
+    }
+
+    .row .col {
+        width: 25%;
+    }
+</style>

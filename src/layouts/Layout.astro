@@ -48,6 +48,27 @@ const { title } = Astro.props;
 		font-size: 1rem;
 	}
 
+	h1,
+	h2 {
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 1.2;
+	}
+
+	h1 {
+		color: var(--blue);
+	}
+
+	h2 {
+		color: var(--blue);
+	}
+
+	h2.row-title {
+		margin-top: .8rem;
+		margin-bottom: 1.1rem;
+		text-align: center;
+	}
+
 	ol, ul {
 		list-style: none;
 	}
@@ -70,13 +91,29 @@ const { title } = Astro.props;
 		color: var(--gray);
 	}
 
+	p.row-subtitle {
+		color: var(--blue);
+		font-weight: 700;
+		text-align: center;
+	}
+
+	p.row-desc {
+		text-align: center;
+	}
+
+	.row.titles-wrapper {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 3.125rem;
+	}
+
 	.btn {
 		border-radius: 10px;
 		background-color: #1965BE;
 		color: var(--white);
 		font-size: 1rem;
-		font-weight: 700;
-		padding: 10px 30px;
+		font-weight: 700;	
+		padding: .625rem 1.875rem;
 		max-width: 145px;
 		width: 100%;
 	}
@@ -91,10 +128,23 @@ const { title } = Astro.props;
 		line-height: 1.6;
 	}
 
-	h1 {
-		color: #1965BE;
-		font-size: 40px;
-		font-weight: 700;
-		line-height: 1.2;
+	/**
+	 * Helpers
+	 */
+	.text-white {
+		color: var(--white);
+	}
+
+	.text-left {
+		text-align: left;
+	}
+
+	.text-center {
+		text-align: center;
+	}
+
+	.py-5 {
+		padding-top: 3.75rem;
+		padding-bottom: 3.75rem;
 	}
 </style>
