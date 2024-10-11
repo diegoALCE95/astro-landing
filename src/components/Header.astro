@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import Logo from '../images/logo.svg';
+---
+<div class="container">
+    <header role="banner">
+        <div class="row">
+            <div class="col">
+                <div class="logo-wrapper">
+                    <Image class="logo" src={Logo} alt="logo"></Image>
+                </div>
+            </div>
+    
+            <div class="col">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#" class=="item-link">Our Services</a>
+                        </li>
+                        <li>
+                            <a href="#" class=="item-link">Reviews</a>
+                        </li>
+                        <li>
+                            <a href="#" class=="item-link">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class=="item-link">Areas We Serve</a>
+                        </li>
+                        <li>
+                            <a href="#" class=="item-link">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+    
+            <div class="col">
+                <a href="#" class="btn">Book a Call</a>
+            </div>
+        </div>
+    
+    </header>
+</div>
+
+<style>
+    .row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 3rem;
+    }
+
+    nav ul {
+        display: flex;
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 16px 25px 13px;
+    }
+
+    nav ul li a:hover {
+        background-color: var(--blue);
+        color: var(--white);
+    }
+
+    .logo {
+        width: 100%;
+        max-width: 172px;
+    }
+</style>

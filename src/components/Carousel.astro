@@ -1,0 +1,210 @@
+---
+// import Swiper and modules styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+---
+<div class="carousel">
+    <div class="container">
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <div class="card-wrapper">
+                    <div class="layer">
+                        <h2>Roof Repair</h2>
+                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                        <a class="btn">Read more</a>
+                    </div>
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="card-wrapper">
+                    <div class="layer">
+                        <h2>Roof Repair</h2>
+                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                        <a class="btn">Read more</a>
+                    </div>
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="card-wrapper">
+                    <div class="layer">
+                        <h2>Roof Repair</h2>
+                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                        <a class="btn">Read more</a>
+                    </div>
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="card-wrapper">
+                    <div class="layer">
+                        <h2>Roof Repair</h2>
+                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                        <a class="btn">Read more</a>
+                    </div>
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="card-wrapper">
+                    <div class="layer">
+                        <h2>Roof Repair</h2>
+                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                        <a class="btn">Read more</a>
+                    </div>
+                </div>
+              </div>
+              
+              <div class="swiper-slide">
+                <div class="card-wrapper">
+                    <div class="layer">
+                        <h2>Roof Repair</h2>
+                        <p class="desc">Comprehensive roofing solutions for homeowners, including roof replacements, repairs, and inspections.</p>
+                        <a class="btn">Read more</a>
+                    </div>
+                </div>
+              </div>
+              
+              
+              ...
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+.carousel {
+    padding: 5rem 0;
+}
+
+.swiper {
+    width: 100%;
+    min-height: 403px;
+    height: auto;
+}
+
+.swiper .card-wrapper {
+    background-image: url('../images/carousel-bg2.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 10px;
+    padding: 0;
+    min-height: 403px;
+}
+
+.swiper .card-wrapper.show {
+    padding: 0;
+}
+
+.swiper .card-wrapper .layer {
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 30px 38px;
+    min-height: 403px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.swiper .card-wrapper.show .layer {
+    background-color: #1966becc;
+}
+
+.swiper .card-wrapper .layer h2 {
+    color: var(--white);
+    font-size: 1.375rem;
+    font-weight: 700;
+    padding-bottom: .5rem;
+}
+
+.swiper .card-wrapper .layer .desc {
+    color: var(--white);
+    display: none;
+}
+
+.swiper .card-wrapper.show .layer .desc {
+    display: block;
+}
+
+.swiper .card-wrapper .layer .btn {
+    max-width: 85px;
+    display: block;
+}
+
+.swiper .card-wrapper.show .layer .btn {
+    display: none;
+}
+
+
+
+</style>
+
+<script>
+// core version + navigation, pagination modules:
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+
+// init Swiper:
+const swiper = new Swiper('.swiper', {
+  // configure Swiper to use modules
+  modules: [Navigation, Pagination],
+  slidesPerView: 3,
+  spaceBetween: 20,
+  direction: 'horizontal',
+  loop: true,
+  // Optional parameters
+  grabCursor: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+});
+
+/* Animation */
+const carouselCardBtn = document.querySelectorAll('.swiper .card-wrapper .layer .btn');
+const carouselSlide = document.querySelectorAll('.swiper .swiper-slide');
+
+carouselCardBtn.forEach( (btn) => {
+    btn.addEventListener('click', () => {
+        // Card Wrapper
+        btn.parentElement.parentElement.classList.add('show');
+    });
+});
+
+carouselSlide.forEach( (slide) => {
+    slide.addEventListener('mouseout', () => {
+        console.log('out');
+        // btn.parentElement.parentElement.classList.remove('show');
+    });
+})
+
+</script>

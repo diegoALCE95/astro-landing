@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import Form from '../components/Form.astro';
+import Check from '../images/blue-check.svg'
+---
+
+<div class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col one">
+                <h1>Top Roofing Services in Austin, Texas - Quality You Can Trust</h1>
+    
+                <ul class="icon-list">
+                    <li>
+                        <div class="icon-wrapper">
+                            <Image class="blue-check" src={Check} alt="none"></Image>
+                            <p>Feel secure knowing our team is certified and licensed.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-wrapper">
+                            <Image class="blue-check" src={Check} alt="none"></Image>
+                            <p>Quick & Easy booking process.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon-wrapper">
+                            <Image class="blue-check" src={Check} alt="none"></Image>
+                            <p>Get the roof you always wanted, and finance it easily through us!</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+    
+            <div class="col two">
+                <Form />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<style>
+    .hero {
+        background-image: url('../images/hero-bg.webp');
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        min-height: 64rem;
+    }
+
+    .row {
+        display: flex;
+        column-gap: 5rem;
+        padding: 6rem 0;
+    }
+
+    .row .col.one{
+        width: 70%;
+        margin-top: 1.5rem;
+    }
+
+    .row .col.two{
+        width: 30%;
+    }
+
+    .icon-list {
+        margin-top: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        row-gap: .7rem;
+    }
+
+    .icon-list .icon-wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: .8rem;
+    }
+
+    .blue-check {
+        max-width: 1rem;
+    }
+
+
+</style>
